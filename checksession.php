@@ -23,8 +23,11 @@ function checkUser()
     if ($_SESSION['loggedin'] == 1)
         return TRUE;
     else {
-        $_SESSION['URI'] = 'http://ec2-3-25-68-166.ap-southeast-2.compute.amazonaws.com' . $_SERVER['REQUEST_URI']; //save current url for redirect     
-        header('Location: http://ec2-3-25-68-166.ap-southeast-2.compute.amazonaws.com/bnb/login.php', true, 303);
+        $_SESSION['URI'] = 'https://berkagmpp.github.io/onslow.io/' . $_SERVER['REQUEST_URI']; //save current url for redirect     
+        header('Location: https://berkagmpp.github.io/onslow.io/onsloe/login.php', true, 303);
+
+        // $_SESSION['URI'] = 'http://ec2-3-25-68-166.ap-southeast-2.compute.amazonaws.com' . $_SERVER['REQUEST_URI']; //save current url for redirect     
+        // header('Location: http://ec2-3-25-68-166.ap-southeast-2.compute.amazonaws.com/bnb/login.php', true, 303);
     }
 }
 
