@@ -1,0 +1,45 @@
+body {
+    font-size: 1em;
+    line-height: 2em;
+  }
+  
+  h6 {
+    font-size: 1.2em;
+  }
+  
+  .f_input:valid, select:valid, textarea {
+    border: 2px solid green;
+  }
+  
+  .f_input:invalid, select:invalid {
+    border: 2px solid red;
+    box-shadow: 0 0 2px 1px red;
+  }
+  
+  .f_input:focus:invalid, select:focus:invalid {
+    border: 2px dashed red;
+    outline: none;
+  }
+  
+  span #cnmsg {
+    font-size: 0.85em;
+  }
+  
+  table {
+    width: 100%;
+    border: 1px solid black;
+    font-size: 1em;
+  }
+  
+  #tblavailability {
+    width: auto;
+  }
+  
+  tr, td, th {
+    border: 1px solid black;
+  }
+  
+  #add {
+    cursor: pointer;
+  }
+  
