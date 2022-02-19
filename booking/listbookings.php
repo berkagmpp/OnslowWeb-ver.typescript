@@ -26,9 +26,9 @@ include "../config.php"; //load in any variables
     </p>
     <p>
         <label for="input_checkin">Duration:&nbsp;</label>
-        <input id="input_checkin" type="text" placeholder="yyyy-mm-dd" oninput="autodatePattern(this)">
+        <input id="input_checkin" type="text" placeholder="yyyy-mm-dd">
         <label for="input_checkout">&nbsp;-&nbsp;</label>
-        <input id="input_checkout" type="text" placeholder="yyyy-mm-dd" oninput="autodatePattern(this)">
+        <input id="input_checkout" type="text" placeholder="yyyy-mm-dd">
         <input id="date_search" type="button" value="CHECK">
     </p>
     <div id="msg"></div><br>

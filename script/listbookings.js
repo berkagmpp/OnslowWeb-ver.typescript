@@ -156,7 +156,7 @@
     //     }
     // });
 
-    // room.addEventListener('keydown', roomFinding, false);
+    room.addEventListener('keydown', roomFinding, false);
     room.addEventListener('keyup', roomFinding, false);
 
     function roomFinding(e) {
@@ -205,12 +205,6 @@
         return date;
     }
 
-    // dates front-end validation: disable enter manually
-    const autodatePattern = (target) => {
-        target.value = target.value
-            .replace(/[0-9a-zA-Z\s.,'!@#$"%^&*)(}{[\]=-]+$/, '') // user cannot enter manually
-    }
-
     let msg = document.getElementById("msg");
 
     document.getElementById("date_search").addEventListener("click", function(event) {
@@ -249,6 +243,25 @@
                 bookings = data;
                 display(bookings);
           }).catch(console.error);
+    })
+
+    // front-end validation
+    name.addEventListener("input", function(){
+        name.value = name.value.replace(/[^0-9a-zA-Z]/g, ''); // user can enter only alphaets and numbers
+    })
+
+    room.addEventListener("input", function(){
+        room.value = room.value.replace(/[^0-9a-zA-Z]/g, ''); // user can enter only alphaets and numbers
+    })
+
+    checkin.addEventListener("input", function() {
+        checkin.value = checkin.value
+            .replace(/[0-9a-zA-Z\s.,'!@#$"%^&*)(}{[\]=-]+$/, '') // user cannot enter manually
+    })
+
+    checkout.addEventListener("input", function() {
+        checkout.value = checkout.value
+            .replace(/[0-9a-zA-Z\s.,'!@#$"%^&*)(}{[\]=-]+$/, '') // user cannot enter manually
     })
 
 })();

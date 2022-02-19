@@ -152,5 +152,10 @@
           }).catch(console.error);
     })
 
+    // front-end validation
+    name.addEventListener("input", function(){
+        name.value = name.value.replace(/[^0-9a-zA-Z]/g, ''); // user can enter only alphaets and numbers
+    })
+
 })();
 
