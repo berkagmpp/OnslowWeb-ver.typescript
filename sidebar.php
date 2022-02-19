@@ -8,13 +8,13 @@
     <li><a href="https://openpolytechnic.ac.nz">Open Polytechnic</a></li>
     <li><a href="https://openpolytechnic.iqualify.com/local-login">iQualify</a></li>
     <li><a href="#">no link </a></li>
-    <li><a href="/bnb/privacy.php">Privacy statement</a></li>
+    <li><a href="/onslow/privacy.php">Privacy statement</a></li>
   </ul>
   <h3>Search</h3>
   <form method="post" action="#" id="search_form">
     <p>
       <input class="search" type="text" name="search_field" value="Enter keywords....." />
-      <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="/bnb/style/search.png" alt="Search" title="Search" />
+      <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="/onslow/style/search.png" alt="Search" title="Search" />
     </p>
   </form>
 </div>

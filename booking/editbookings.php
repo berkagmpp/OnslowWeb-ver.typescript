@@ -195,7 +195,7 @@ $roomcount = mysqli_num_rows($roomresult);
 
 <h1>Edit a booking (update)</h1>
 <h2><a href="listbookings.php">[Return to the booking listing]</a>
-    <a href="/bnb/">[Return to the main page]</a>
+    <a href="/onslow/">[Return to the main page]</a>
     <?php
     if ($rowcount > 0) {
         $row = mysqli_fetch_assoc($result);

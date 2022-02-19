@@ -25,7 +25,7 @@ include "../config.php"; //load in any variables
     </thead>
   </table>
 
-  <h3><a href='addroom.php'>[Add a room]</a><a href="/bnb/">[Return to main page]</a></h3>
+  <h3><a href='addroom.php'>[Add a room]</a><a href="/onslow/">[Return to main page]</a></h3>
 
   <?php
   require_once "../footer.php";

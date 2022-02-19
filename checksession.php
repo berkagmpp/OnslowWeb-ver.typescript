@@ -23,11 +23,8 @@ function checkUser()
     if ($_SESSION['loggedin'] == 1)
         return TRUE;
     else {
-        $_SESSION['URI'] = 'https://berkagmpp.github.io/onslow.io/' . $_SERVER['REQUEST_URI']; //save current url for redirect     
-        header('Location: https://berkagmpp.github.io/onslow.io/onsloe/login.php', true, 303);
-
-        // $_SESSION['URI'] = 'http://ec2-3-25-68-166.ap-southeast-2.compute.amazonaws.com' . $_SERVER['REQUEST_URI']; //save current url for redirect     
-        // header('Location: http://ec2-3-25-68-166.ap-southeast-2.compute.amazonaws.com/bnb/login.php', true, 303);
+        $_SESSION['URI'] = 'http://ec2-3-25-68-166.ap-southeast-2.compute.amazonaws.com/onslow/' . $_SERVER['REQUEST_URI']; //save current url for redirect     
+        header('Location: http://ec2-3-25-68-166.ap-southeast-2.compute.amazonaws.com/onslow/login.php', true, 303);
     }
 }
 
@@ -65,7 +62,7 @@ function login($username, $password)
         if ($_SESSION['loggedin'] == 0 and !empty($_SESSION['URI']))
             $uri = $_SESSION['URI'];
         else {
-            $_SESSION['URI'] =  'http://ec2-3-25-68-166.ap-southeast-2.compute.amazonaws.com/bnb/customer/listcustomers.php';
+            $_SESSION['URI'] =  'http://ec2-3-25-68-166.ap-southeast-2.compute.amazonaws.com/onslow/login.php';
             $uri = $_SESSION['URI'];
         }
 
@@ -87,5 +84,5 @@ function logout()
     $_SESSION['userid'] = -1;
     $_SESSION['username'] = '';
     $_SESSION['URI'] = '';
-    header('Location: http://ec2-3-25-68-166.ap-southeast-2.compute.amazonaws.com/bnb/login.php', true, 303);
+    header('Location: http://ec2-3-25-68-166.ap-southeast-2.compute.amazonaws.com/onslow/login.php', true, 303);
 }

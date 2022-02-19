@@ -34,7 +34,7 @@ $rowcount = mysqli_num_rows($result);
 ?>
 
 <h1>Room Details View</h1>
-<h2><a href='listrooms.php'>[Return to the Room listing]</a><a href='/bnb/'>[Return to the main page]</a></h2>
+<h2><a href='listrooms.php'>[Return to the Room listing]</a><a href='/onslow/'>[Return to the main page]</a></h2>
 
 <?php
 

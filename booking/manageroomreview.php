@@ -75,7 +75,7 @@ $row = mysqli_fetch_assoc($result);
     <h1>Edit &#47; add room review</h1>
 
     <h2><a href="listbookings.php">[Return to the booking listing]</a>
-        <a href="/bnb/">[Return to the main page]</a>
+        <a href="/onslow/">[Return to the main page]</a>
     </h2>
 
     <form id="review" method="POST" action="manageroomreview.php">

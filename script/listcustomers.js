@@ -20,7 +20,7 @@
 
             const name = document.getElementById("input_name").value;
 
-            xhttp.open("GET", `http://localhost/bnb/api/customers.php?name=${name}`, true);
+            xhttp.open("GET", `/onslow/api/customers.php?name=${name}`, true);
             xhttp.send();
         });
     }

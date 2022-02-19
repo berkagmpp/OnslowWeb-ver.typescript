@@ -40,7 +40,7 @@ $rowcount = mysqli_num_rows($result);
 
 <h1>Booking Details View</h1>
 <h2><a href='listbookings.php'>[Return to the Booking listing]</a>
-    <a href='/bnb/'>[Return to the main page]</a>
+    <a href='/onslow/'>[Return to the main page]</a>
 </h2>
 
 <?php

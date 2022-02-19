@@ -246,7 +246,7 @@ if (isset($_POST['submit']) and !empty($_POST['submit']) and ($_POST['submit'] =
 
   <h1>Make a booking</h1>
   <h2><a href="listbookings.php">[Return to the booking listing]</a>
-    <a href="/bnb/">[Return to the main page]</a>
+    <a href="/onslow/">[Return to the main page]</a>
     <?php
     if (isAdmin()) {
     ?>

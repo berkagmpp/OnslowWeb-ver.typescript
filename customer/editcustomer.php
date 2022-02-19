@@ -76,7 +76,7 @@ if ($rowcount > 0) {
 ?>
 
   <h1>Customer Details Update</h1>
-  <h2><a href='listcustomers.php'>[Return to the Customer listing]</a><a href='/bnb/'>[Return to the main page]</a></h2>
+  <h2><a href='listcustomers.php'>[Return to the Customer listing]</a><a href='/onslow/'>[Return to the main page]</a></h2>
 
   <form method="POST" action="editcustomer.php">
     <input type="hidden" name="id" value="<?php echo $id; ?>">
