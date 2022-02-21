@@ -75,7 +75,7 @@ $rowcount = mysqli_num_rows($result);
 <h1>Booking details preview before deletion</h1>
 
 <h2><a href='listbookings.php'>[Return to the booking listing]</a>
-    <a href='/onslow/'>[Return to the main page]</a>
+    <a href='/onslow-ts/'>[Return to the main page]</a>
 </h2>
 
 <?php

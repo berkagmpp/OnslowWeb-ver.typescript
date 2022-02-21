@@ -51,7 +51,7 @@ include "../config.php"; //load in any variables
     </thead>
 </table>
 
-<h2><a href="makebooking.php">[Make a booking]</a><a href="/onslow/">[Return to the main page]</a></h2>
+<h2><a href="makebooking.php">[Make a booking]</a><a href="/onslow-ts/">[Return to the main page]</a></h2>
 
 <?php
 require_once "../footer.php";

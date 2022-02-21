@@ -19,7 +19,7 @@
           }
         }
 
-        xhttp.open("GET", "/onslow/api/rooms.php?sq=", true);
+        xhttp.open("GET", "/onslow-ts/api/rooms.php?sq=", true);
         xhttp.send();
       });
     }

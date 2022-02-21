@@ -27,7 +27,7 @@
             const checkinVal = checkin.value;
             const checkoutVal = checkout.value;
 
-            xhttp.open("GET", `/onslow/api/bookings.php?name=${nameVal}&room=${roomVal}&checkin=${checkinVal}&checkout=${checkoutVal}`, true);
+            xhttp.open("GET", `/onslow-ts/api/bookings.php?name=${nameVal}&room=${roomVal}&checkin=${checkinVal}&checkout=${checkoutVal}`, true);
             xhttp.send();
         });
     }

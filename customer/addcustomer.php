@@ -26,7 +26,7 @@ $rowcount = mysqli_num_rows($result);
 ?>
 
 <h1>Register customer</h1>
-<h2><a href='addroom.php'>[Add a room]</a><a href="/onslow/">[Return to main page]</a></h2>
+<h2><a href='addroom.php'>[Add a room]</a><a href="/onslow-ts/">[Return to main page]</a></h2>
 <table border="1">
     <thead>
         <tr>

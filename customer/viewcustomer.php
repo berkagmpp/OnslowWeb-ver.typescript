@@ -34,7 +34,7 @@ $rowcount = mysqli_num_rows($result);
 ?>
 
 <h1>Customer Details View</h1>
-<h2><a href='listcustomers.php'>[Return to the Customer listing]</a><a href='/onslow/'>[Return to the main page]</a></h2>
+<h2><a href='listcustomers.php'>[Return to the Customer listing]</a><a href='/onslow-ts/'>[Return to the main page]</a></h2>
 
 <?php
 

@@ -9,8 +9,8 @@
   <meta name="description" content="Ongaonga Bed & Breakfast" />
   <meta name="keywords" content="Bed & Breakfast" />
   <!-- custom css-->
-  <link rel="stylesheet" type="text/css" href="/onslow/style/html_style.css" title="style">
-  <link rel="stylesheet" type="text/css" href="/onslow/style/style.css" title="style" />
+  <link rel="stylesheet" type="text/css" href="/onslow-ts/style/html_style.css" title="style">
+  <link rel="stylesheet" type="text/css" href="/onslow-ts/style/style.css" title="style" />
 </head>
 
 <body>

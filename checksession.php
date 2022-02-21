@@ -23,8 +23,8 @@ function checkUser()
     if ($_SESSION['loggedin'] == 1)
         return TRUE;
     else {
-        $_SESSION['URI'] = 'http://localhost/onslow/' . $_SERVER['REQUEST_URI']; //save current url for redirect     
-        header('Location: http://localhost/onslow/login.php', true, 303);
+        $_SESSION['URI'] = 'http://localhost/onslow-ts/' . $_SERVER['REQUEST_URI']; //save current url for redirect     
+        header('Location: http://localhost/onslow-ts/login.php', true, 303);
     }
 }
 
@@ -62,7 +62,7 @@ function login($username, $password)
         if ($_SESSION['loggedin'] == 0 and !empty($_SESSION['URI']))
             $uri = $_SESSION['URI'];
         else {
-            $_SESSION['URI'] =  'http://localhost/onslow/login.php';
+            $_SESSION['URI'] =  'http://localhost/onslow-ts/login.php';
             $uri = $_SESSION['URI'];
         }
 
@@ -84,5 +84,5 @@ function logout()
     $_SESSION['userid'] = -1;
     $_SESSION['username'] = '';
     $_SESSION['URI'] = '';
-    header('Location: http://localhost/onslow/login.php', true, 303);
+    header('Location: http://localhost/onslow-ts/login.php', true, 303);
 }
