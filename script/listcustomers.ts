@@ -41,7 +41,7 @@
             const customerName: string = data[i]['customer_column'];
 
             //concatenate our actions urls into a single string
-            let urls = '<a href="viewcustomer.php?id=' + id + '">[view]</a>';
+            let urls: string = '<a href="viewcustomer.php?id=' + id + '">[view]</a>';
             urls += '<a href="editcustomer.php?id=' + id + '">[edit]</a>';
             urls += '<a href="deletecustomer.php?id=' + id + '">[delete]</a>';
 

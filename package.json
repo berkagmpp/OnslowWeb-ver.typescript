@@ -17,8 +17,13 @@
   },
   "homepage": "https://github.com/berkagmpp/onslow-ts#readme",
   "devDependencies": {
+    "@types/jquery": "^3.5.13",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
     "eslint": "^8.9.0"
+  },
+  "dependencies": {
+    "@types/jqueryui": "^1.12.16",
+    "jquery-datepicker": "^1.12.3"
   }
 }
