@@ -29,7 +29,7 @@
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const display = (data: any):any => {
         const tbl = document.getElementById("tblrooms") as HTMLTableElement;
-        const rowCount = tbl.rows.length;
+        const rowCount: number = tbl.rows.length;
         for (let i = 1; i < rowCount; i++) {
             //delete from the top - row 0 is the table header we keep
             tbl.deleteRow(1);
