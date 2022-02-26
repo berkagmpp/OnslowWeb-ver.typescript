@@ -34,45 +34,47 @@
     }
 
     const display = function (data: any) {
-        const tbl = document.getElementById('tblbookings') as HTMLTableElement;
-        const rowCount = tbl.rows.length;
-        for (let i = 1; i < rowCount; i++) {
-            //delete from the top - row 0 is the table header we keep
-            tbl.deleteRow(1);
-        }
+        const tbl = document.getElementById('tblbookings');
+        if (tbl instanceof HTMLTableElement) {
+            const rowCount = tbl.rows.length;
+            for (let i = 1; i < rowCount; i++) {
+                //delete from the top - row 0 is the table header we keep
+                tbl.deleteRow(1);
+            }
 
-        //populate the table
-        //mbrs.length is the size of our array
-        for (let i = 0; i < data.length; i++) {
-            const id: number = data[i]['bookingID'];
-            const room: (string|number) = data[i]['room_column'];
-            const customerName: (string|number)= data[i]['customer_column'];
-            const checkinDate: string = data[i]['checkindate'];
-            const checkoutDate: string = data[i]['checkoutdate'];
-            const breakfast: string = data[i]['breakfast'];
+            //populate the table
+            //mbrs.length is the size of our array
+            for (let i = 0; i < data.length; i++) {
+                const id: number = data[i]['bookingID'];
+                const room: (string|number) = data[i]['room_column'];
+                const customerName: (string|number)= data[i]['customer_column'];
+                const checkinDate: string = data[i]['checkindate'];
+                const checkoutDate: string = data[i]['checkoutdate'];
+                const breakfast: string = data[i]['breakfast'];
 
-            //concatenate our actions urls into a single string
-            let urls: string = '<a href="viewbookings.php?id=' + id + '">[view]</a>';
-            urls += '<a href="editbookings.php?id=' + id + '">[edit]</a>';
-            urls += '<a href="deletebookings.php?id=' + id + '">[delete]</a>';
+                //concatenate our actions urls into a single string
+                let urls: string = '<a href="viewbookings.php?id=' + id + '">[view]</a>';
+                urls += '<a href="editbookings.php?id=' + id + '">[edit]</a>';
+                urls += '<a href="deletebookings.php?id=' + id + '">[delete]</a>';
 
-            //create a table row
-            const tr = tbl.insertRow(-1);
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            let tabCell: any = tr.insertCell(-1);
-            tabCell.innerHTML = id;
-            tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = room;
-            tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = customerName;
-            tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = checkinDate;
-            tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = checkoutDate;
-            tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = breakfast;
-            tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = urls; //action URLS            
+                //create a table row
+                const tr = tbl.insertRow(-1);
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                let tabCell: any = tr.insertCell(-1);
+                tabCell.innerHTML = id;
+                tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = room;
+                tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = customerName;
+                tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = checkinDate;
+                tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = checkoutDate;
+                tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = breakfast;
+                tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = urls; //action URLS            
+            }
         }
     }
 
@@ -188,42 +190,46 @@
 
     let msg = document.getElementById('msg') as HTMLElement;
 
-    const dateSearch = document.getElementById('date_search') as HTMLElement;
-    dateSearch.addEventListener('click', () => {
-        if (checkin.value == '' || checkout.value == '') {
-            msg.innerHTML = 'Please fill all check-in and check-out dates';
+    const dateSearch = document.getElementById('date_search');
+    if (dateSearch instanceof HTMLElement) {
+        dateSearch.addEventListener('click', () => {
+            if (checkin.value == '' || checkout.value == '') {
+                msg.innerHTML = 'Please fill all check-in and check-out dates';
+                checkin.value = '';
+                checkout.value = '';
+                setTimeout(()=>{
+                    msg.innerHTML = '';
+                },2000)
+                getBookings()
+                    .then(data => {
+                        display(data);
+                }).catch(console.error);
+            } else {
+                getBookings()
+                    .then(data => {
+                        display(data);
+                }).catch(console.error);
+            }
+        })
+    }
+
+    const refresh = document.getElementById('refresh');
+    if (refresh instanceof HTMLButtonElement) {
+        refresh.addEventListener('click', () => {
+            name.value = '';
+            room.value = '';
             checkin.value = '';
             checkout.value = '';
+            msg.innerHTML = 'cleared';
             setTimeout(()=>{
                 msg.innerHTML = '';
             },2000)
             getBookings()
                 .then(data => {
                     display(data);
-              }).catch(console.error);
-        } else {
-            getBookings()
-                .then(data => {
-                    display(data);
-              }).catch(console.error);
-        }
-    })
-
-    const refresh = document.getElementById('refresh') as HTMLElement;
-    refresh.addEventListener('click', () => {
-        name.value = '';
-        room.value = '';
-        checkin.value = '';
-        checkout.value = '';
-        msg.innerHTML = 'cleared';
-        setTimeout(()=>{
-            msg.innerHTML = '';
-        },2000)
-        getBookings()
-            .then(data => {
-                display(data);
-          }).catch(console.error);
-    })
+            }).catch(console.error);
+        })
+    }
 
     // front-end validation
     name.addEventListener('input', () => {

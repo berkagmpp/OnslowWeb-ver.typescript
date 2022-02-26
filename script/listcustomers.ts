@@ -28,32 +28,33 @@
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const display = function (data: any) {
-        const tbl = document.getElementById("tblcustomers") as HTMLTableElement;
-        const rowCount: number = tbl.rows.length;
-        for (let i = 1; i < rowCount; i++) {
-            //delete from the top - row 0 is the table header we keep
-            tbl.deleteRow(1);
-        }
+        const tbl = document.getElementById("tblcustomers");
+        if (tbl instanceof HTMLTableElement) {
+            const rowCount: number = tbl.rows.length;
+            for (let i = 1; i < rowCount; i++) {
+                //delete from the top - row 0 is the table header we keep
+                tbl.deleteRow(1);
+            }
+            //populate the table
+            for (let i = 0; i < data.length; i++) {
+                const id: number = data[i]['customerID'];
+                const customerName: string = data[i]['customer_column'];
 
-        //populate the table
-        for (let i = 0; i < data.length; i++) {
-            const id: number = data[i]['customerID'];
-            const customerName: string = data[i]['customer_column'];
+                //concatenate our actions urls into a single string
+                let urls: string = '<a href="viewcustomer.php?id=' + id + '">[view]</a>';
+                urls += '<a href="editcustomer.php?id=' + id + '">[edit]</a>';
+                urls += '<a href="deletecustomer.php?id=' + id + '">[delete]</a>';
 
-            //concatenate our actions urls into a single string
-            let urls: string = '<a href="viewcustomer.php?id=' + id + '">[view]</a>';
-            urls += '<a href="editcustomer.php?id=' + id + '">[edit]</a>';
-            urls += '<a href="deletecustomer.php?id=' + id + '">[delete]</a>';
-
-            //create a table row with three cells  
-            const tr = tbl.insertRow(-1);
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            let tabCell: any = tr.insertCell(-1);
-            tabCell.innerHTML = id; //id
-            tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = customerName; //name      
-            tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = urls; //action URLS            
+                //create a table row with three cells  
+                const tr = tbl.insertRow(-1);
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                let tabCell: any = tr.insertCell(-1);
+                tabCell.innerHTML = id; //id
+                tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = customerName; //name      
+                tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = urls; //action URLS            
+            }
         }
     }
 
